@@ -3,9 +3,10 @@
 
 
 <?php
-include 'Retrieve_url.php';
+//set tag to variable
 $tag = $_GET["tag"];
 
+// fetch raw data and declare counters and variables
 $searchData = file_get_contents('https://www.instagram.com/explore/tags/'.$tag.'/?__a=1');
 $x = 0;
 $link1="";
@@ -14,34 +15,37 @@ $link3="";
 $link4="";
 $link5="";
 $link6="";
-
+//loop through raw data and find desired data, in this case "display_url"
+//extract the actual link
 while (true)
-{
+	{
 	if ( $searchData[$x] == 'd' && $searchData[$x+1] == 'i' && $searchData[$x+2] == 's' && $searchData[$x+3] == 'p' && $searchData[$x+4] == 'l' && $searchData[$x+5] == 'a' && $searchData[$x+6] == 'y' && $searchData[$x+7] == '_' && $searchData[$x+8] == 'u' && $searchData[$x+9] == 'r' && $searchData[$x+10] == 'l')
 	{
 		$counter = 0;
-												
+		// once display_url is found, another loop to extract the individual characters and insert into another viariable
+		// loop ends when .jpg is found. This marks the end of the url		
+		// repeat for the 6 different links, future improvement make this a function so repeated code can be removed.								
 		if (empty($link1)) 
 		{
 		While(true)
 			{	
-				$link1[$counter] = $searchData[$x+14+$counter];
+				$link1[$counter] = $searchData[$x+14+$counter]; // adds 14 because there is 14 characters from x being 'd' from display_url":"https.... to the actual start of the link. 
 				
-				if(!empty($link1[0]) && !empty($link1[1]) && !empty($link1[2]))
+				if(!empty($link1[0]) && !empty($link1[1]) && !empty($link1[2])) // will return an error if u do not check if the link is not empty, starts checking for .jpg at 3 characters in the link
 				{
 					if($link1[$counter] == 'g' && $link1[$counter-1] == 'p' && $link1[$counter-2] == 'j' && $link1[$counter-3] == '.')
 					{
 					
-					$link1 = implode($link1);
-					$x = $x + 14+$counter;
+					$link1 = implode($link1); // since putting it in the variables results in a individual array of characters, we merge them with implode to 1 string
+					$x = $x + 14+$counter; // continues to search for other links 
 					break;
 					}
 				}
-				$counter = $counter + 1;
+				$counter = $counter + 1; // adds counter until .jpg is found
 			}
 		}
 		
-	else if(empty($link2))
+	else if(empty($link2)) // refer to $link1
 	{
 		While(true)
 			{	
@@ -62,7 +66,7 @@ while (true)
 	}
 	
 	
-	else if(empty($link3))
+	else if(empty($link3))// refer to $link1
 	{
 		While(true)
 		{	
@@ -82,7 +86,7 @@ while (true)
 			}
 
 	}
-	else if(empty($link4))
+	else if(empty($link4))// refer to $link1
 	{
 		While(true)
 		{	
@@ -102,7 +106,7 @@ while (true)
 			}
 
 	}
-	else if(empty($link5))
+	else if(empty($link5))// refer to $link1
 	{
 		While(true)
 		{	
@@ -121,7 +125,7 @@ while (true)
 				$counter = $counter + 1;
 			}
 	}
-	else if(empty($link6))
+	else if(empty($link6))// refer to $link1
 	{
 		While(true)
 		{	
@@ -147,20 +151,24 @@ while (true)
 	
 	
 	
-}
-
-if (!empty($link6))
+	}
+	// exit when there are 6 links
+	if (!empty($link6)) 
 	{
 		break;
 	}
-$x = $x + 1;
+	// adding counter to move to next character
+	$x = $x + 1;
 
 	
 }
 
-$allLink = array($link1,$link2,$link3,$link4,$link5,$link6);
+$allLink = array($link1,$link2,$link3,$link4,$link5,$link6); // set variable array to all the links, this is mainly for shorten of code if transfered into functions.
 
 ?>
+<!–– display all the images -->
+
+<body style="background-color:powderblue;">
 
 <img src="<?php echo $allLink[0] ?> " alt="insta6" width="500" height="600">
 <img src="<?php echo $allLink[1] ?> " alt="insta1" width="500" height="600">
