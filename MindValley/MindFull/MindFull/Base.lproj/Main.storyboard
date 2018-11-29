@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,45 +15,81 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MindFull" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dhN-hU-dOl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="custom" rowHeight="140" id="Yim-7e-dFZ" customClass="CustomCell" customModule="MindFull" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
+                                        <rect key="frame" x="0.0" y="28" width="736" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yim-7e-dFZ" id="FfK-xn-zkQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="736" height="139.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WHs-bC-NWB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="257" height="139.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="257" id="Ypu-rI-7Xc"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="139.66666666666666"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yld-Bo-Omk">
-                                                    <rect key="frame" x="256" y="0.0" width="119" height="139.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="This image change is on purpose to display size classes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GnA-yJ-TaJ">
+                                                    <rect key="frame" x="436" y="0.0" width="300" height="139.66666666666666"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="119" id="yS0-He-Hyg"/>
+                                                        <constraint firstAttribute="width" constant="300" id="FGV-Du-hvi"/>
                                                     </constraints>
-                                                    <state key="normal" title="Cancel Loading"/>
-                                                </button>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="FGV-Du-hvi"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=compact-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="FGV-Du-hvi"/>
+                                                        </mask>
+                                                    </variation>
+                                                </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="yld-Bo-Omk" secondAttribute="trailing" id="EIs-y1-BcK"/>
-                                                <constraint firstItem="WHs-bC-NWB" firstAttribute="centerY" secondItem="FfK-xn-zkQ" secondAttribute="centerY" id="Ggs-RD-hki"/>
-                                                <constraint firstItem="WHs-bC-NWB" firstAttribute="leading" secondItem="FfK-xn-zkQ" secondAttribute="leading" id="Ze8-NH-8ll"/>
-                                                <constraint firstItem="WHs-bC-NWB" firstAttribute="bottom" secondItem="yld-Bo-Omk" secondAttribute="bottom" id="b8p-NW-YFe"/>
-                                                <constraint firstItem="WHs-bC-NWB" firstAttribute="top" secondItem="FfK-xn-zkQ" secondAttribute="top" id="cGy-A3-Fpm"/>
-                                                <constraint firstItem="WHs-bC-NWB" firstAttribute="top" secondItem="yld-Bo-Omk" secondAttribute="top" id="eAZ-hQ-jZU"/>
+                                                <constraint firstItem="WHs-bC-NWB" firstAttribute="top" secondItem="FfK-xn-zkQ" secondAttribute="top" id="5WX-1i-PbM"/>
+                                                <constraint firstItem="GnA-yJ-TaJ" firstAttribute="top" secondItem="FfK-xn-zkQ" secondAttribute="top" id="5rW-aL-JFo"/>
+                                                <constraint firstAttribute="trailing" secondItem="WHs-bC-NWB" secondAttribute="trailing" id="BOb-Mg-ULF"/>
+                                                <constraint firstAttribute="bottom" secondItem="WHs-bC-NWB" secondAttribute="bottom" id="KHF-5D-mEa"/>
+                                                <constraint firstItem="WHs-bC-NWB" firstAttribute="leading" secondItem="FfK-xn-zkQ" secondAttribute="leading" id="MSc-kQ-vfT"/>
+                                                <constraint firstAttribute="bottom" secondItem="GnA-yJ-TaJ" secondAttribute="bottom" id="V8L-Lr-yJE"/>
+                                                <constraint firstAttribute="trailing" secondItem="WHs-bC-NWB" secondAttribute="trailing" constant="300" id="XKB-08-dTw"/>
+                                                <constraint firstAttribute="trailing" secondItem="GnA-yJ-TaJ" secondAttribute="trailing" id="o1J-0d-sUq"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="BOb-Mg-ULF"/>
+                                                    <exclude reference="XKB-08-dTw"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=compact-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="XKB-08-dTw"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=compact-widthClass=regular">
+                                                <mask key="constraints">
+                                                    <include reference="BOb-Mg-ULF"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="BOb-Mg-ULF"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <mask key="constraints">
+                                                    <include reference="BOb-Mg-ULF"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="CancelButton" destination="yld-Bo-Omk" id="Kpi-kc-tjf"/>
                                             <outlet property="ImageView" destination="WHs-bC-NWB" id="lSw-We-EfA"/>
                                         </connections>
                                     </tableViewCell>
@@ -75,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.14130434782609" y="133.33333333333334"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,9 @@
 //
 
 import Foundation
+
+// Pintrest is the data structure of the given Api
+
 struct Pintrest: Decodable {
     let id: String?
     let created_at: String?

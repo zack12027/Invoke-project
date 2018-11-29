@@ -11,5 +11,4 @@ import UIKit
 
 class CustomCell: UITableViewCell {
     @IBOutlet weak var ImageView: UIImageView!
-    @IBOutlet weak var CancelButton: UIButton!
 }
